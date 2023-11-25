@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content-section">
+      <h2>Numbers list</h2>
+      <ul id="numbers-list">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+
+      <h2>Text paras</h2>
+      <div id="text-paras">
+        <p>Hello world</p>
+        <p>Lorem ipsum</p>
+      </div>
+    </div>
+  </body>
+  <script>
+  /**
+ * Append a new child element to the parent Node element passed as argument
+ * - Child element should be of specified tag type
+ * - Child element should contain the specified text as its content
+ * @param {Node} parentId
+ * @param {String} childTagType
+ * @param {String} text
+ */
+function addNewChildElementToParent(parentId, childTagType, text) {
+  let addele = document.getElementById(parentId);
+  //   let create = document.createElement("li");
+  let ele = document.createElement(childTagType);
+  //   create.append(addele);
+  ele.textContent = text;
+  console.log(ele);
+  addele.append(ele);
+}
+
+addNewChildElementToParent("numbers-list", "li", "3"); // Appends 3 as a list item
+addNewChildElementToParent("text-paras", "p", "Hey there");
+
+  </script>
+</html>
